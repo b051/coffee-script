@@ -48,7 +48,7 @@ helpers.extend global,
 exports.run = ->
   global.__originalDirname = fs.realpathSync '.'
   process.chdir cakefileDirectory __originalDirname
-  args = process.argv[2..]
+  args = process.argv[3..]
   CoffeeScript.run fs.readFileSync('Cakefile').toString(), filename: 'Cakefile'
   oparse = new optparse.OptionParser switches
   return printTasks() unless args.length
